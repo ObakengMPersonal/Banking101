@@ -1,0 +1,23 @@
+flowchart TD
+    A[User] -->|Opens Web App| B(Login Page)
+    B --> C((Login/Signup))
+    C -->|Signin Unsuccessful| D(Password Recovery)
+    C -->|Signup Successful| E[Dashboard]
+    C -->|SignUp| F[fa:fa-user-plus  SignUp Page]
+    D -->|yes| E[Dashboard]
+    D -->|no| C
+    F --> G(Create Account)
+    G --> E{Dashboard}
+    E -->|Select Income| H[Income Page]
+    E -->|Select Expense| I[Expense Page]
+    E -->|Select Cards| J[Card Page]
+    E -->|Select Savings| K[Savings Page]
+    E -->|Reports| L[Reports Page]
+    E -->|Forecast| M[Forecast Page]
+    H --> N(Add Income)
+    I --> O(Add Expense)
+    J --> P(Add Card)
+    K --> Q(Add Savings)
+    L --> R(Monthly Reports)
+    L--> S(Weekly Reports)
+    M --> T(Simulate Saving Plan)
