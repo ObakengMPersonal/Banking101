@@ -1,0 +1,13 @@
+version: "3.9"
+services:
+  app:
+    build:
+      context: .                   # context is now just "."
+      dockerfile: Dockerfile.dev   # Points to the dev file in the same folder
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./src:/app/src             # Just "./src", no parent folders needed
+      - ./public:/app/public
+    environment:
+      - NODE_ENV=development

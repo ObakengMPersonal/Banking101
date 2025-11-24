@@ -1,0 +1,17 @@
+FROM node:20-alpine
+
+WORKDIR /app
+
+COPY package.json package-lock.json ./
+
+# Install all dependencies (including devDependencies)
+RUN npm install
+
+COPY . .
+
+# Expose the Vite port
+EXPOSE 5173
+
+# Start the app in dev mode
+# The "-- --host" part is CRITICAL as it allows Docker to map the port.
+CMD ["npm", "run", "dev", "--", "--host"]
