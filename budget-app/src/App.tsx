@@ -1,12 +1,14 @@
-import { useState } from 'react'
-import './App.css'
+/* import { useState } from 'react' */
+import './index.css'
+import { BrowserRouter } from "react-router-dom"
+import AppRoutes from "./routes/AppRoutes"
+
 
 function App() {
   return (
-    <div className="text-center mt-10">
-      <h1 className="text-3xl font-bold">Budget App</h1>
-      <p className="text-gray-500">Project initialized successfully.</p>
-    </div>
+    <BrowserRouter>
+      <AppRoutes />
+    </BrowserRouter>
   );
 }
 
